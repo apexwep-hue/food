@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Étoile | Fine Dining Restaurant & Specialty Café</title>
+  <meta name="description" content="Experience artisanal gastronomy, wood-fired culinary art, and organic specialty coffee at L'Étoile. Reserve your table today.">
+  <meta property="og:title" content="L'Étoile Bistro & Café">
+  <meta property="og:description" content="Artisanal cuisine & specialty coffee crafted with organic seasonal ingredients.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Header Placeholder -->
+  <header class="site-header" id="main-header-container"></header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" style="--hero-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="badge">Artisanal Gastronomy & Espresso</span>
+            <h1 class="hero-title">Where Fine Flavor Meets Modern Atmosphere.</h1>
+            <p class="hero-description">
+              Indulge in seasonal tasting menus, wood-fired signature meats, and single-origin micro-lot coffees crafted by award-winning chefs.
+            </p>
+            <div class="hero-buttons">
+              <a href="contact.html" class="btn btn-primary">Reserve A Table</a>
+              <a href="#menu-preview" class="btn btn-outline">Explore Menu</a>
+            </div>
+
+            <!-- Dynamic Stats Bar -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-value">12+</div>
+                <div class="stat-label">Years Culinary Art</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Michelin Stars</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Organic Local Sourced</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS SECTION -->
+    <section class="section-padding" id="menu-preview">
+      <div class="container">
+        <div class="section-header center text-center">
+          <span class="sub-title">Signature Offerings</span>
+          <h2 class="section-title">Explore Our Seasonal Menu</h2>
+          <p class="section-description">Crafted daily using fresh local harvest and traditional French techniques.</p>
+        </div>
+
+        <!-- Filter Categories -->
+        <div class="menu-filter-bar">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Starters">Starters</button>
+          <button class="filter-btn" data-filter="Mains">Mains</button>
+          <button class="filter-btn" data-filter="Desserts">Desserts</button>
+          <button class="filter-btn" data-filter="Specialty Coffee">Specialty Coffee</button>
+        </div>
+
+        <!-- Dynamic Menu Container -->
+        <div class="menu-grid" id="menu-grid-target"></div>
+      </div>
+    </section>
+
+    <!-- RESERVATION FORM SECTION -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="reservation-box">
+          <div class="section-header text-center center">
+            <span class="sub-title">Bookings & Tables</span>
+            <h2 class="section-title">Reserve Your Experience</h2>
+          </div>
+
+          <div id="form-feedback" class="form-feedback"></div>
+
+          <form id="reservation-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="res-name">Full Name *</label>
+                <input type="text" id="res-name" class="form-control" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-email">Email Address *</label>
+                <input type="email" id="res-email" class="form-control" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-phone">Phone Number *</label>
+                <input type="tel" id="res-phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-guests">Number of Guests</label>
+                <select id="res-guests" class="form-control">
+                  <option value="1">1 Person</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="6+">6+ Guests (Private Room)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-date">Date *</label>
+                <input type="date" id="res-date" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-time">Preferred Time *</label>
+                <input type="time" id="res-time" class="form-control" required>
+              </div>
+
+              <div class="form-group full-width" style="text-align: center; margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 320px;">Confirm Reservation</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer Component -->
+  <footer class="site-footer" id="main-footer"></footer>
+
+  <!-- Floating Floating Action Controls -->
+  <a href="https://wa.me/15552345678" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Initial Render of default menu page
+    document.addEventListener('DOMContentLoaded', () => {
+      ComponentRenderer.renderMenuGrid('menu-grid-target', 'All');
+    });
+  </script>
+</body>
+</html>

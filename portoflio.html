@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | L'Étoile Modern Bistro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header" id="main-header-container"></header>
+
+  <main style="padding-top: calc(var(--header-height) + 3rem);">
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header center text-center">
+          <span class="sub-title">Visual Journey</span>
+          <h2 class="section-title">Atmosphere & Culinary Gallery</h2>
+        </div>
+
+        <div class="gallery-grid" id="gallery-target"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="main-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const target = document.getElementById('gallery-target');
+      if (target) {
+        target.innerHTML = SITE_DATA.gallery.map(g => `
+          <div class="gallery-item reveal">
+            <img src="${g.image}" alt="${g.title}" loading="lazy">
+            <div class="gallery-overlay">
+              <span style="color: var(--primary); font-size: 0.8rem; font-weight: 600;">${g.category}</span>
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem;">${g.title}</h4>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

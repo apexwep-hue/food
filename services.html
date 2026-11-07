@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Events | L'Étoile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header" id="main-header-container"></header>
+
+  <main style="padding-top: calc(var(--header-height) + 3rem);">
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header center text-center">
+          <span class="sub-title">Bespoke Experiences</span>
+          <h2 class="section-title">Our Dining Services & Events</h2>
+        </div>
+
+        <div class="services-grid" id="services-target"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="main-footer"></footer>
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('services-target');
+      if (container) {
+        container.innerHTML = SITE_DATA.services.map(s => `
+          <div class="service-card reveal">
+            <div class="service-icon">${s.icon}</div>
+            <h3 class="service-title">${s.title}</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">${s.description}</p>
+            <ul class="service-features">
+              ${s.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
